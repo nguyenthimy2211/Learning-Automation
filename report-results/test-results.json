@@ -1,0 +1,237 @@
+{
+  "config": {
+    "argv": [],
+    "configFile": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\playwright.config.ts",
+    "rootDir": "D:/CSV/HR/Auto/project1/Learning-Automation/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/CSV/HR/Auto/project1/Learning-Automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/CSV/HR/Auto/project1/Learning-Automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/CSV/HR/Auto/project1/Learning-Automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/CSV/HR/Auto/project1/Learning-Automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/CSV/HR/Auto/project1/Learning-Automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/CSV/HR/Auto/project1/Learning-Automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\tests",
+        "snapshotDir": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "trace": "on-first-retry",
+          "screenshot": "only-on-failure",
+          "video": "on",
+          "colorScheme": "dark",
+          "geolocation": {
+            "longitude": 12.492507,
+            "latitude": 41.889938
+          },
+          "locale": "en-GB",
+          "permissions": [
+            "geolocation"
+          ],
+          "timezoneId": "Europe/Paris",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "navigationTimeout": 10000,
+          "actionTimeout": 10000,
+          "headless": false,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "dot",
+        null
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "./report-results/test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "./report-results/results.xml"
+        }
+      ],
+      [
+        "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "3way",
+    "version": "1.64.1",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "web\\appointments\\appointment-validation.spec.ts",
+      "file": "web/appointments/appointment-validation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Appointment Form",
+          "file": "web/appointments/appointment-validation.spec.ts",
+          "line": 22,
+          "column": 6,
+          "specs": [
+            {
+              "title": "CURA-APPT-001 Display appointment form after login",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "appointment"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4422,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-19T08:07:45.616Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\test-results\\web-appointments-appointme-ed1f9-ppointment-form-after-login-chromium\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "efae7b69c3d8fbc837fa-bc7d4fe246591cb25be4",
+              "file": "web/appointments/appointment-validation.spec.ts",
+              "line": 28,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-19T08:07:44.743Z",
+    "duration": 6289.757999999914,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

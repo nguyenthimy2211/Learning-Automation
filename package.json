@@ -1,0 +1,29 @@
+{
+  "name": "learning-automation",
+  "version": "1.0.0",
+  "description": "This project is my first automation demo, created to practice and improve my automation skills through hands-on exercises.\r It helps me practice every day, reinforce what I've learned, and review my knowledge through practical examples.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --project=chromium",
+    "test:smoke": "npx playwright test --project=chromium --grep @smoke",
+    "test:regression": "npx playwright test --project=chromium --grep @regression"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenthimy2211/Learning-Automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nguyenthimy2211/Learning-Automation/issues"
+  },
+  "homepage": "https://github.com/nguyenthimy2211/Learning-Automation#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
+    "allure-commandline": "^2.46.1",
+    "allure-playwright": "^3.13.0"
+  }
+}

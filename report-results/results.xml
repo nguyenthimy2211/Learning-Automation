@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="6.289757999999915">
+<testsuite name="web\appointments\appointment-validation.spec.ts" timestamp="2026-10-19T08:07:45.174Z" hostname="chromium" tests="1" failures="0" skipped="0" time="4.422" errors="0">
+<testcase name="Appointment Form › CURA-APPT-001 Display appointment form after login" classname="web\appointments\appointment-validation.spec.ts" time="4.422">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\web-appointments-appointme-ed1f9-ppointment-form-after-login-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
