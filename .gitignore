@@ -10,3 +10,4 @@ profiles\.env.qa
 profiles\.env.stg
 profiles\.env.uat
 allure-report
+allure-results
