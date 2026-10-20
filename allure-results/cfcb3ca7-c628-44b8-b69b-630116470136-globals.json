@@ -1,1 +1,0 @@
-{"attachments":[],"errors":[{"message":"beforeEach hook failed: TypeError: Cannot read properties of undefined (reading 'BASE_URL')","trace":"TypeError: Cannot read properties of undefined (reading 'BASE_URL')\n    at D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\tests\\web\\auth\\login.spec.ts:20:35","timestamp":1792206952616}]}
