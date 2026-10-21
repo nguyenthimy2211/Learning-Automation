@@ -83,7 +83,7 @@
         "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
         "timeout": 30000,
         "use": {
-          "trace": "on-first-retry",
+          "trace": "on",
           "screenshot": "only-on-failure",
           "video": "on",
           "colorScheme": "dark",
@@ -165,25 +165,22 @@
   },
   "suites": [
     {
-      "title": "web\\appointments\\appointment-validation.spec.ts",
-      "file": "web/appointments/appointment-validation.spec.ts",
+      "title": "web\\auth\\login.spec.ts",
+      "file": "web/auth/login.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Appointment Form",
-          "file": "web/appointments/appointment-validation.spec.ts",
-          "line": 22,
+          "title": "Login Page Tests",
+          "file": "web/auth/login.spec.ts",
+          "line": 14,
           "column": 6,
           "specs": [
             {
-              "title": "CURA-APPT-001 Display appointment form after login",
+              "title": "should login successfully with valid credentials",
               "ok": true,
-              "tags": [
-                "smoke",
-                "appointment"
-              ],
+              "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
@@ -193,21 +190,26 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4422,
+                      "duration": 7949,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-19T08:07:45.616Z",
+                      "startTime": "2026-10-20T15:56:42.562Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\test-results\\web-appointments-appointme-ed1f9-ppointment-form-after-login-chromium\\video.webm"
+                          "path": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\test-results\\web-auth-login-Login-Page--0b618-ully-with-valid-credentials-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\test-results\\web-auth-login-Login-Page--0b618-ully-with-valid-credentials-chromium\\trace.zip"
                         }
                       ]
                     }
@@ -215,9 +217,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "efae7b69c3d8fbc837fa-bc7d4fe246591cb25be4",
-              "file": "web/appointments/appointment-validation.spec.ts",
-              "line": 28,
+              "id": "59bb99a94f6a83063934-83b2913c3ddfe0206254",
+              "file": "web/auth/login.spec.ts",
+              "line": 15,
               "column": 9
             }
           ]
@@ -227,8 +229,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-19T08:07:44.743Z",
-    "duration": 6289.757999999914,
+    "startTime": "2026-10-20T15:56:40.910Z",
+    "duration": 11445.00400000019,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
