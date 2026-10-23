@@ -76,7 +76,7 @@
         "metadata": {
           "actualWorkers": 1
         },
-        "name": "chromium",
+        "name": "firefox",
         "testDir": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\tests",
         "snapshotDir": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\tests",
         "testIgnore": [],
@@ -100,10 +100,10 @@
             "width": 1280,
             "height": 720
           },
-          "navigationTimeout": 10000,
+          "navigationTimeout": 60000,
           "actionTimeout": 10000,
           "headless": false,
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:157.0) Gecko/20100101 Firefox/157.0",
           "screen": {
             "width": 1920,
             "height": 1080
@@ -111,11 +111,11 @@
           "deviceScaleFactor": 1,
           "isMobile": false,
           "hasTouch": false,
-          "defaultBrowserType": "chromium"
+          "defaultBrowserType": "firefox"
         },
         "dependencies": [],
         "ignoreSnapshots": false,
-        "__projectId": "chromium"
+        "__projectId": "firefox"
       }
     ],
     "quiet": false,
@@ -165,62 +165,219 @@
   },
   "suites": [
     {
-      "title": "web\\auth\\login.spec.ts",
-      "file": "web/auth/login.spec.ts",
+      "title": "web\\appointments\\create-appointment.spec.ts",
+      "file": "web/appointments/create-appointment.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Login Page Tests",
-          "file": "web/auth/login.spec.ts",
-          "line": 14,
+          "title": "Create Appoiment",
+          "file": "web/appointments/create-appointment.spec.ts",
+          "line": 6,
           "column": 6,
           "specs": [
             {
-              "title": "should login successfully with valid credentials",
-              "ok": true,
+              "title": "APPT-003: Create appointment using Excel test data",
+              "ok": false,
               "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 7949,
-                      "errors": [],
-                      "stdout": [],
+                      "status": "timedOut",
+                      "duration": 32266,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\common-page.ts",
+                            "column": 30,
+                            "line": 70
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Book Appointment' }).first()\nExpected: visible\nError: Test timeout of 30000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Book Appointment' }).first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Book Appointment' }).first()\u001b[22m\n\u001b[2m  - Test timeout of 30000ms exceeded.\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\ui\\common-page.ts:70\n\n\u001b[0m \u001b[90m 68 |\u001b[39m         \u001b[33mUtility\u001b[39m\u001b[33m.\u001b[39mlogAction(\u001b[32m'CommonPage'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'click'\u001b[39m\u001b[33m,\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mdescribeLocator(target))\u001b[33m;\u001b[39m\n \u001b[90m 69 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 70 |\u001b[39m         \u001b[36mawait\u001b[39m expect(target)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[33mConstants\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTIMEOUTS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mWAIT_ELEMENT_VISIBLE\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[36mawait\u001b[39m expect(target)\u001b[33m.\u001b[39mtoBeEnabled({ timeout\u001b[33m:\u001b[39m \u001b[33mConstants\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTIMEOUTS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mWAIT_ELEMENT_VISIBLE\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 72 |\u001b[39m\n \u001b[90m 73 |\u001b[39m         \u001b[36mawait\u001b[39m target\u001b[33m.\u001b[39mscrollIntoViewIfNeeded()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at CommonPage.apply (D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\common-page.ts:70:30)\u001b[22m\n\u001b[2m    at D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\utilities\\logging.ts:15:49\u001b[22m\n\u001b[2m    at MakeAppointmentPage.clickBookAppointment (D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\make-appointment-page.ts:83:5)\u001b[22m\n\u001b[2m    at MakeAppointmentPage.bookAppointment (D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\make-appointment-page.ts:97:5)\u001b[22m\n\u001b[2m    at D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\tests\\web\\appointments\\create-appointment.spec.ts:21:9\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "[CommonPage] click: getByRole('link', { name: 'Make Appointment' }).first().first()\n"
+                        },
+                        {
+                          "text": "[CommonPage] fill: getByLabel('Username').first().first() <= \"John Doe\"\n"
+                        },
+                        {
+                          "text": "[CommonPage] fill: getByLabel('Password').first().first() <= \"ThisIsNotAPassword\"\n"
+                        },
+                        {
+                          "text": "[CommonPage] click: getByRole('button', { name: 'Login' }).first().first()\n"
+                        },
+                        {
+                          "text": "ExcelReader.read Read 4 rows from D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\test-data\\appointments\\appointments.xlsx\n"
+                        },
+                        {
+                          "text": "[CommonPage] click: getByPlaceholder('dd/mm/yyyy').first().first()\n"
+                        },
+                        {
+                          "text": "[CommonPage] fill: getByPlaceholder('Comment').first().first() <= \"General consultation\"\n"
+                        },
+                        {
+                          "text": "[CommonPage] click: getByRole('button', { name: 'Book Appointment' }).first().first()\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-20T15:56:42.562Z",
+                      "steps": [
+                        {
+                          "title": "Book Appointment",
+                          "duration": 6175,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Book Appointment' }).first()\nExpected: visible\nError: Test timeout of 30000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Book Appointment' }).first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Book Appointment' }).first()\u001b[22m\n\u001b[2m  - Test timeout of 30000ms exceeded.\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Book Appointment' }).first()\nExpected: visible\nError: Test timeout of 30000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Book Appointment' }).first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Book Appointment' }).first()\u001b[22m\n\u001b[2m  - Test timeout of 30000ms exceeded.\u001b[22m\n\n    at CommonPage.apply (D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\common-page.ts:70:30)\n    at D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\utilities\\logging.ts:15:49\n    at MakeAppointmentPage.clickBookAppointment (D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\make-appointment-page.ts:83:5)\n    at MakeAppointmentPage.bookAppointment (D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\make-appointment-page.ts:97:5)\n    at D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\tests\\web\\appointments\\create-appointment.spec.ts:21:9",
+                            "location": {
+                              "file": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\common-page.ts",
+                              "column": 30,
+                              "line": 70
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m..\\pages\\ui\\common-page.ts:70\n\n\u001b[0m \u001b[90m 68 |\u001b[39m         \u001b[33mUtility\u001b[39m\u001b[33m.\u001b[39mlogAction(\u001b[32m'CommonPage'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'click'\u001b[39m\u001b[33m,\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mdescribeLocator(target))\u001b[33m;\u001b[39m\n \u001b[90m 69 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 70 |\u001b[39m         \u001b[36mawait\u001b[39m expect(target)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[33mConstants\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTIMEOUTS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mWAIT_ELEMENT_VISIBLE\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[36mawait\u001b[39m expect(target)\u001b[33m.\u001b[39mtoBeEnabled({ timeout\u001b[33m:\u001b[39m \u001b[33mConstants\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTIMEOUTS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mWAIT_ELEMENT_VISIBLE\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 72 |\u001b[39m\n \u001b[90m 73 |\u001b[39m         \u001b[36mawait\u001b[39m target\u001b[33m.\u001b[39mscrollIntoViewIfNeeded()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\u001b[0m"
+                          },
+                          "steps": [
+                            {
+                              "title": "Select Facility",
+                              "duration": 177,
+                              "steps": [
+                                {
+                                  "title": "Select Option from Dropdown",
+                                  "duration": 176
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Check or uncheck Hostipal Readmission",
+                              "duration": 142,
+                              "steps": [
+                                {
+                                  "title": "Set locator check or unchecked",
+                                  "duration": 140
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Select Healcare Program",
+                              "duration": 203,
+                              "steps": [
+                                {
+                                  "title": "Check Locator",
+                                  "duration": 201
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Input Visit Date",
+                              "duration": 5119,
+                              "steps": [
+                                {
+                                  "title": "Click on Locator",
+                                  "duration": 1483
+                                },
+                                {
+                                  "title": "Input value into field",
+                                  "duration": 3501
+                                },
+                                {
+                                  "title": "Press Keyboard",
+                                  "duration": 128
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Input Comment",
+                              "duration": 282,
+                              "steps": [
+                                {
+                                  "title": "Input value into field",
+                                  "duration": 281
+                                }
+                              ]
+                            },
+                            {
+                              "title": "Click on Book Appointment button",
+                              "duration": 231,
+                              "error": {
+                                "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Book Appointment' }).first()\nExpected: visible\nError: Test timeout of 30000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Book Appointment' }).first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Book Appointment' }).first()\u001b[22m\n\u001b[2m  - Test timeout of 30000ms exceeded.\u001b[22m\n",
+                                "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Book Appointment' }).first()\nExpected: visible\nError: Test timeout of 30000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Book Appointment' }).first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Book Appointment' }).first()\u001b[22m\n\u001b[2m  - Test timeout of 30000ms exceeded.\u001b[22m\n\n    at CommonPage.apply (D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\common-page.ts:70:30)\n    at D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\utilities\\logging.ts:15:49\n    at MakeAppointmentPage.clickBookAppointment (D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\make-appointment-page.ts:83:5)\n    at MakeAppointmentPage.bookAppointment (D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\make-appointment-page.ts:97:5)\n    at D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\tests\\web\\appointments\\create-appointment.spec.ts:21:9",
+                                "location": {
+                                  "file": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\common-page.ts",
+                                  "column": 30,
+                                  "line": 70
+                                },
+                                "snippet": "\u001b[90m   at \u001b[39m..\\pages\\ui\\common-page.ts:70\n\n\u001b[0m \u001b[90m 68 |\u001b[39m         \u001b[33mUtility\u001b[39m\u001b[33m.\u001b[39mlogAction(\u001b[32m'CommonPage'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'click'\u001b[39m\u001b[33m,\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mdescribeLocator(target))\u001b[33m;\u001b[39m\n \u001b[90m 69 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 70 |\u001b[39m         \u001b[36mawait\u001b[39m expect(target)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[33mConstants\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTIMEOUTS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mWAIT_ELEMENT_VISIBLE\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[36mawait\u001b[39m expect(target)\u001b[33m.\u001b[39mtoBeEnabled({ timeout\u001b[33m:\u001b[39m \u001b[33mConstants\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTIMEOUTS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mWAIT_ELEMENT_VISIBLE\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 72 |\u001b[39m\n \u001b[90m 73 |\u001b[39m         \u001b[36mawait\u001b[39m target\u001b[33m.\u001b[39mscrollIntoViewIfNeeded()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\u001b[0m"
+                              },
+                              "steps": [
+                                {
+                                  "title": "Click on Locator",
+                                  "duration": 229,
+                                  "error": {
+                                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Book Appointment' }).first()\nExpected: visible\nError: Test timeout of 30000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Book Appointment' }).first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Book Appointment' }).first()\u001b[22m\n\u001b[2m  - Test timeout of 30000ms exceeded.\u001b[22m\n",
+                                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Book Appointment' }).first()\nExpected: visible\nError: Test timeout of 30000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Book Appointment' }).first() with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Book Appointment' }).first()\u001b[22m\n\u001b[2m  - Test timeout of 30000ms exceeded.\u001b[22m\n\n    at CommonPage.apply (D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\common-page.ts:70:30)\n    at D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\utilities\\logging.ts:15:49\n    at MakeAppointmentPage.clickBookAppointment (D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\make-appointment-page.ts:83:5)\n    at MakeAppointmentPage.bookAppointment (D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\make-appointment-page.ts:97:5)\n    at D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\tests\\web\\appointments\\create-appointment.spec.ts:21:9",
+                                    "location": {
+                                      "file": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\pages\\ui\\common-page.ts",
+                                      "column": 30,
+                                      "line": 70
+                                    },
+                                    "snippet": "\u001b[90m   at \u001b[39m..\\pages\\ui\\common-page.ts:70\n\n\u001b[0m \u001b[90m 68 |\u001b[39m         \u001b[33mUtility\u001b[39m\u001b[33m.\u001b[39mlogAction(\u001b[32m'CommonPage'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'click'\u001b[39m\u001b[33m,\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mdescribeLocator(target))\u001b[33m;\u001b[39m\n \u001b[90m 69 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 70 |\u001b[39m         \u001b[36mawait\u001b[39m expect(target)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[33mConstants\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTIMEOUTS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mWAIT_ELEMENT_VISIBLE\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[36mawait\u001b[39m expect(target)\u001b[33m.\u001b[39mtoBeEnabled({ timeout\u001b[33m:\u001b[39m \u001b[33mConstants\u001b[39m\u001b[33m.\u001b[39m\u001b[33mTIMEOUTS\u001b[39m\u001b[33m.\u001b[39m\u001b[33mWAIT_ELEMENT_VISIBLE\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 72 |\u001b[39m\n \u001b[90m 73 |\u001b[39m         \u001b[36mawait\u001b[39m target\u001b[33m.\u001b[39mscrollIntoViewIfNeeded()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\u001b[0m"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "startTime": "2026-10-22T13:46:00.561Z",
                       "annotations": [],
                       "attachments": [
                         {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\test-results\\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\\test-failed-1.png"
+                        },
+                        {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\test-results\\web-auth-login-Login-Page--0b618-ully-with-valid-credentials-chromium\\video.webm"
+                          "path": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\test-results\\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\test-results\\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\\error-context.md"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\test-results\\web-auth-login-Login-Page--0b618-ully-with-valid-credentials-chromium\\trace.zip"
+                          "path": "D:\\CSV\\HR\\Auto\\project1\\Learning-Automation\\test-results\\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\\trace.zip"
                         }
                       ]
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
-              "id": "59bb99a94f6a83063934-83b2913c3ddfe0206254",
-              "file": "web/auth/login.spec.ts",
-              "line": 15,
-              "column": 9
+              "id": "5646b65a9e06f8df3f0c-3d4f17462ccacc077378",
+              "file": "web/appointments/create-appointment.spec.ts",
+              "line": 19,
+              "column": 10
             }
           ]
         }
@@ -229,11 +386,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-20T15:56:40.910Z",
-    "duration": 11445.00400000019,
-    "expected": 1,
+    "startTime": "2026-10-22T13:45:49.580Z",
+    "duration": 51652.96399999999,
+    "expected": 0,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }

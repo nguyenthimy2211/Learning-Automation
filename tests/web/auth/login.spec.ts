@@ -1,6 +1,5 @@
-import { TestData } from "../../../data/test-data";
-import { User } from "../../../interfaces/user";
-import { test } from "../../../pages/base-page";
+import { TestData } from '@data/test-data';
+import { test } from '@pages/base-page';
 
 // const username: string = 'John Doe';
 // const password: string = 'ThisIsNotAPassword';
@@ -12,7 +11,7 @@ import { test } from "../../../pages/base-page";
 
 
 test.describe('Login Page Tests', () => {
-    test('should login successfully with valid credentials', async ({ homePage, loginPage }) => {
+    test('should login successfully with valid credentials', async({ homePage, loginPage }) => {
         await homePage.goto();
         await homePage.clickMakeAppointment();
         // await loginPage.login1(username, password);

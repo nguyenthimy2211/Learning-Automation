@@ -1,0 +1,5 @@
+facility,hospitalReadmission,healthcareProgram,comment
+Tokyo CURA Healthcare Center,true,Medicare,Regular checkup
+Hongkong CURA Healthcare Center,false,Medicaid,Follow-up visit
+Seoul CURA Healthcare Center,true,None,Annual health assessment
+Tokyo CURA Healthcare Center,false,Medicare,General consultation

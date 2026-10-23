@@ -1,13 +1,76 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="11.44500400000019">
-<testsuite name="web\auth\login.spec.ts" timestamp="2026-10-20T15:56:42.016Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.949" errors="0">
-<testcase name="Login Page Tests › should login successfully with valid credentials" classname="web\auth\login.spec.ts" time="7.949">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="1" time="51.65296399999999">
+<testsuite name="web\appointments\create-appointment.spec.ts" timestamp="2026-10-22T13:45:52.631Z" hostname="firefox" tests="1" failures="0" skipped="0" time="32.266" errors="1">
+<testcase name="Create Appoiment › APPT-003: Create appointment using Excel test data" classname="web\appointments\create-appointment.spec.ts" time="32.266">
 <system-out>
-<![CDATA[
-[[ATTACHMENT|..\test-results\web-auth-login-Login-Page--0b618-ully-with-valid-credentials-chromium\video.webm]]
+<![CDATA[[CommonPage] click: getByRole('link', { name: 'Make Appointment' }).first().first()
+[CommonPage] fill: getByLabel('Username').first().first() <= "John Doe"
+[CommonPage] fill: getByLabel('Password').first().first() <= "ThisIsNotAPassword"
+[CommonPage] click: getByRole('button', { name: 'Login' }).first().first()
+ExcelReader.read Read 4 rows from D:\CSV\HR\Auto\project1\Learning-Automation\test-data\appointments\appointments.xlsx
+[CommonPage] click: getByPlaceholder('dd/mm/yyyy').first().first()
+[CommonPage] fill: getByPlaceholder('Comment').first().first() <= "General consultation"
+[CommonPage] click: getByRole('button', { name: 'Book Appointment' }).first().first()
 
-[[ATTACHMENT|..\test-results\web-auth-login-Login-Page--0b618-ully-with-valid-credentials-chromium\trace.zip]]
+[[ATTACHMENT|..\test-results\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\video.webm]]
+
+[[ATTACHMENT|..\test-results\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\error-context.md]]
+
+[[ATTACHMENT|..\test-results\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\trace.zip]]
 ]]>
 </system-out>
+<error message="Test timeout of 30000ms exceeded." type="Error">
+<![CDATA[  [firefox] › web\appointments\create-appointment.spec.ts:19:10 › Create Appoiment › APPT-003: Create appointment using Excel test data › Book Appointment › Click on Book Appointment button › Click on Locator 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Book Appointment' }).first()
+    Expected: visible
+    Error: Test timeout of 30000ms exceeded.
+
+    Call log:
+      - Expect "toBeVisible" getByRole('button', { name: 'Book Appointment' }).first() with timeout 10000ms
+      - waiting for getByRole('button', { name: 'Book Appointment' }).first()
+      - Test timeout of 30000ms exceeded.
+
+
+       at ..\pages\ui\common-page.ts:70
+
+      68 |         Utility.logAction('CommonPage', 'click', this.describeLocator(target));
+      69 |
+    > 70 |         await expect(target).toBeVisible({ timeout: Constants.TIMEOUTS.WAIT_ELEMENT_VISIBLE });
+         |                              ^
+      71 |         await expect(target).toBeEnabled({ timeout: Constants.TIMEOUTS.WAIT_ELEMENT_VISIBLE });
+      72 |
+      73 |         await target.scrollIntoViewIfNeeded().catch(() => {});
+        at CommonPage.apply (D:\CSV\HR\Auto\project1\Learning-Automation\pages\ui\common-page.ts:70:30)
+        at D:\CSV\HR\Auto\project1\Learning-Automation\utilities\logging.ts:15:49
+        at MakeAppointmentPage.clickBookAppointment (D:\CSV\HR\Auto\project1\Learning-Automation\pages\ui\make-appointment-page.ts:83:5)
+        at MakeAppointmentPage.bookAppointment (D:\CSV\HR\Auto\project1\Learning-Automation\pages\ui\make-appointment-page.ts:97:5)
+        at D:\CSV\HR\Auto\project1\Learning-Automation\tests\web\appointments\create-appointment.spec.ts:21:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\web-appointments-create-ap-ab6d2-tment-using-Excel-test-data-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
 </testcase>
 </testsuite>
 </testsuites>

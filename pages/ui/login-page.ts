@@ -1,8 +1,8 @@
 import { Page } from '@playwright/test';
-import { LoginLocator } from '../../locators/login-locators';
+import { LoginLocator } from '@locators/login-locators';
 import { CommonPage } from './common-page';
-import { User } from '../../interfaces/user';
-import { AssertHelper } from '../../utilities/assert-helper';
+import { User } from '@interfaces/user';
+import { AssertHelper } from '@utilities/assert-helper';
 
 
 export class LoginPage extends LoginLocator {

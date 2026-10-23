@@ -1,122 +1,79 @@
+import './env.loader';
+import { Constants } from '@utilities/constants';
 import { defineConfig, devices } from '@playwright/test';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+const baseURL = process.env['BASE_URL'];
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
+if (!baseURL) {
+    throw new Error(
+        'BASE_URL is not defined. Check your profiles/.env.<ENV> file.'
+    );
+}
+
 export default defineConfig({
-  expect: {
-    timeout: 10000,
-  },
-  testDir: './tests',
-  /* Run tests in files in parallel */
-  fullyParallel: true,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  // reporter: 'html',
-  reporter: [
-    ['html', { open: 'never' }],
-    ['dot'],
-    ['list'],
-    ['json', { outputFile: './report-results/test-results.json' }],
-    ['junit', { outputFile: './report-results/results.xml' }],
-    ['allure-playwright'],
-  ],
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  use: {
-    /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
+    testDir: './tests',
 
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on',
+    // Test execution
+    fullyParallel: true,
+    forbidOnly: !!process.env['CI'],
+    retries: process.env['CI'] ? 2 : 0,
+    workers: process.env['CI'] ? Constants.WORKERS : Constants.LOCAL_WORKERS,
 
-    // Capture screenshot after each test failure.
-    screenshot: 'only-on-failure',
+    // Reporters
+    reporter: [
+        ['list'],
+        [
+            'allure-playwright',
+            {
+                detail: true,
+                outputFolder: 'allure-results',
+                suiteTitle: true,
+            },
+        ],
+        ['html', { outputFolder: 'playwright-report', open: 'never' }],
+        ['junit', { outputFile: 'test-results/junit.xml' }],
+        ['json', { outputFile: 'test-results/results.json' }],
+    ],
 
-    // Record video only when retrying a test for the first time.
-
-    // video: 'on-first-retry'
-    video: 'on',
-
-    // Emulates `'prefers-colors-scheme'` media feature.
-    colorScheme: 'dark',
-
-    // Context geolocation.
-    geolocation: { longitude: 12.492507, latitude: 41.889938 },
-
-    // Emulates the user locale.
-    locale: 'en-GB',
-
-    // Grants specified permissions to the browser context.
-    permissions: ['geolocation'],
-
-    // Emulates the user timezone.
-    timezoneId: 'Europe/Paris',
-
-    // Viewport used for all pages in the context.
-    viewport: { width: 1280, height: 720 },
-
-    navigationTimeout: 10000,
-
-    actionTimeout: 10000,
-
-     headless: false,
-  },
-
-  /* Configure projects for major browsers */
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+    // Shared browser settings
+    use: {
+        baseURL,
+        launchOptions: {
+            args: ['--start-maximized', '--disable-popup-blocking'],
+        },
+        colorScheme: 'dark',
+        geolocation: {
+            longitude: 12.492507,
+            latitude: 41.889938,
+        },
+        locale: 'en-GB',
+        viewport: null,
+        permissions: ['geolocation'],
+        headless: process.env['HEADLESS'] === 'true',
+        trace: 'retain-on-failure',
+        screenshot: 'only-on-failure',
+        video: process.env['CI'] ? 'off' : 'on-first-retry',
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+    // Timeouts
+    timeout: Constants.TIMEOUTS.DEFAULT * 4,
+    expect: {
+        timeout: Constants.TIMEOUTS.WAIT_ELEMENT_TIMEOUT,
     },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
-  ],
-
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://localhost:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
+    // Browser projects
+    projects: [
+        {
+            name: 'chromium',
+            use: { ...devices['Desktop Chrome'] },
+        },
+        {
+            name: 'firefox',
+            use: { ...devices['Desktop Firefox'] },
+        },
+        {
+            name: 'webkit',
+            use: { ...devices['Desktop Safari'] },
+        },
+    ],
 });

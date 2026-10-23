@@ -1,0 +1,26 @@
+[
+  {
+    "facility": "Tokyo CURA Healthcare Center",
+    "hospitalReadmission": true,
+    "healthcareProgram": "Medicare",
+    "comment": "Regular checkup"
+  },
+  {
+    "facility": "Hongkong CURA Healthcare Center",
+    "hospitalReadmission": false,
+    "healthcareProgram": "Medicaid",
+    "comment": "Follow-up visit"
+  },
+  {
+    "facility": "Seoul CURA Healthcare Center",
+    "hospitalReadmission": true,
+    "healthcareProgram": "None",
+    "comment": "Annual health assessment"
+  },
+  {
+    "facility": "Tokyo CURA Healthcare Center",
+    "hospitalReadmission": false,
+    "healthcareProgram": "Medicare",
+    "comment": "General consultation"
+  }
+]

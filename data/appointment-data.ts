@@ -1,9 +1,10 @@
-import { Appointment } from "../interfaces/appointment";
-import { CsvReader } from "../utilities/csv-reader";
-import type { AppointmentSource } from "../interfaces/appointment";
-import { Constants } from "../utilities/constants";
-import { ExcelReader } from "../utilities/excel-reader";
-import { JsonReader } from "../utilities/json-reader";
+import { Appointment } from '../interfaces/appointment';
+import { CsvReader } from '../utilities/csv-reader';
+import type { AppointmentSource } from '../interfaces/appointment';
+import { Constants } from '../utilities/constants';
+import { ExcelReader } from '../utilities/excel-reader';
+import { JsonReader } from '../utilities/json-reader';
+import { faker } from '@faker-js/faker';
 
 
 export const futureVisitDate = (): string =>
@@ -40,6 +41,17 @@ const withVisitDate = (row: AppointmentSource): Appointment => ({
     ...row,
     visitDate: futureVisitDate(),
 });
+export const getRandomExcelAppointment = (): Appointment => {
+    const appointments = getExcelAppointments();
+
+    if (appointments.length === 0) {
+        throw new Error('No appointment test data found in Excel.');
+    }
+
+    return faker.helpers.arrayElement(appointments);
+};
+export const getRandomCsvAppointment = (): Appointment =>
+    faker.helpers.arrayElement(getCsvAppointments());
 export const getCsvAppointments = (): Appointment[] =>
     CsvReader.read<Record<string, unknown>>(Constants.TEST_DATA.APPOINTMENTS_CSV)
         .map((row) => withVisitDate({
@@ -66,3 +78,5 @@ export const getExcelAppointments = (): Appointment[] => {
         hospitalReadmission: toHospitalReadmission(row['hospitalReadmission'], 'appointments.xlsx'),
     } as AppointmentSource));
 };
+export const getRandomJsonAppointment = (): Appointment =>
+    faker.helpers.arrayElement(getJsonAppointments());
