@@ -1,8 +1,8 @@
-import test, { expect } from "@playwright/test";
-import { AppointmentSource } from "../../interfaces/appointment";
-import { JsonReader } from "../../utilities/json-reader";
-import { Constants } from "../../utilities/constants";
-import { getCsvAppointments, getExcelAppointments, getJsonAppointments } from "../../data/appointment-data";
+import test, { expect } from '@playwright/test';
+import { AppointmentSource } from '@interfaces/appointment';
+import { JsonReader } from '@utilities/json-reader';
+import { Constants } from '@utilities/constants';
+import { getCsvAppointments, getExcelAppointments, getJsonAppointments } from '@data/appointment-data';
 
 
 test.describe('Appointment data source', {
@@ -16,7 +16,7 @@ test.describe('Appointment data source', {
     ];
     test('JSON, CSV and Excel hold the same number of rown', {
         tag: ['@P1'],
-    }, async () => {
+    }, async() => {
         const jsonRows = JsonReader.read<AppointmentSource[]>(Constants.TEST_DATA.APPOINTMENTS_JSON);
         expect(getCsvAppointments().length, 'CSV rows').toBe(jsonRows.length);
         expect(getExcelAppointments().length, 'Excel rows').toBe(jsonRows.length);
@@ -24,14 +24,7 @@ test.describe('Appointment data source', {
     test('CSV and Excel readmission values are booleans', {
         tag: ['@P1'],
 
-    }, async () => {
-        const jsonRows = JsonReader.read<AppointmentSource[]>(Constants.TEST_DATA.APPOINTMENTS_JSON);
-        expect(getCsvAppointments().length, 'CSV rows').toBe(jsonRows.length);
-        expect(getExcelAppointments().length, 'Excel rows').toBe(jsonRows.length);
-    });
-    test('CSV and Excel readmission values are booleans', {
-        tag: ['@P1'],
-    }, async () => {
+    }, async() => {
         for (const row of [...getCsvAppointments(), ...getExcelAppointments()]) {
             expect(typeof row.hospitalReadmission).toBe('boolean');
         }
@@ -39,7 +32,7 @@ test.describe('Appointment data source', {
 
     test('every CSV and Excel row matches the JSON row at the same position', {
         tag: ['@P1'],
-    }, async () => {
+    }, async() => {
         const jsonRows = JsonReader.read<AppointmentSource[]>(Constants.TEST_DATA.APPOINTMENTS_JSON);
         const csvRows = getCsvAppointments();
         const excelRows = getExcelAppointments();
@@ -61,7 +54,7 @@ test.describe('Appointment data source', {
 
     test('every loaded row gets a future visit date in dd/mm/yyyy', {
         tag: ['@P1'],
-    }, async () => {
+    }, async() => {
         const now = new Date();
         const rows = [...getJsonAppointments(), ...getCsvAppointments(), ...getExcelAppointments()];
 

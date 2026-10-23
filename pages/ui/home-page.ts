@@ -1,7 +1,7 @@
-import { Page } from "@playwright/test";
-import { HomeLocators } from "../../locators/home-locators";
-import { Constants } from "../../utilities/constants";
-import { CommonPage } from "./common-page";
+import { Page } from '@playwright/test';
+import { HomeLocators } from '@locators/home-locators';
+import { Constants } from '@utilities/constants';
+import { CommonPage } from './common-page';
 
 
 export class HomePage extends HomeLocators {

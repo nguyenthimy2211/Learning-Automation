@@ -1,4 +1,4 @@
-import { User } from "../interfaces/user";
+import { User } from '../interfaces/user';
 
 export class TestData {
 

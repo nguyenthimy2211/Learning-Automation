@@ -1,7 +1,7 @@
-import { Locator, Page } from "@playwright/test";
-import { CommonLocators } from "./common-locators";
+import { Locator, Page } from '@playwright/test';
+import { CommonLocators } from './common-locators';
 
-export class SummaryLocator extends CommonLocators {
+export class SummaryLocators extends CommonLocators {
     lblFacility!: Locator;
     lblHospitalReadmission!: Locator;
     lblHealthcareProgram!: Locator;

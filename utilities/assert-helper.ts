@@ -1,6 +1,6 @@
-import { APIResponse, Download, expect, Locator, Page } from "@playwright/test";
-import { step } from "./logging";
-import { Constants } from "./constants";
+import { APIResponse, Download, expect, Locator, Page } from '@playwright/test';
+import { step } from './logging';
+import { Constants } from './constants';
 
 export class AssertHelper {
     protected page: Page;
